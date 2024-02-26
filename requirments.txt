@@ -1,0 +1,4 @@
+os
+pyperclip
+requests
+bs4
