@@ -2,7 +2,7 @@
 # Help Desk Assistant
 
 ## Introduction
-The Help Desk Assistant is a Python-based command-line application designed to streamline the process of generating support ticket templates and troubleshooting guides for help desk personnel. The application leverages predefined templates for common support scenarios, such as password resets, account activations, and device additions, allowing for quick and efficient support ticket creation as well as URL Based Knowledge Base access.
+The Help Desk Assistant is a Python-based command-line application designed to streamline the process of generating support ticket templates and troubleshooting guides for help desk personnel. The application leverages predefined templates for common support scenarios, such as password resets, account activations, and device additions, allowing for quick and efficient support ticket creation.
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -22,10 +22,9 @@ To install the Help Desk Assistant, ensure you have Python and pip installed on 
 1. Clone the repository or download the source files.
 2. Navigate to the project directory.
 3. Install the required dependencies using pip:
-   \`\`\`
+   \`\`\`sh
    pip install -r requirements.txt
    \`\`\`
-4. Alternatively, you can install each package as needed  
 
 ## Usage
 To use the application, run the `main.py` script from the command line:
@@ -41,6 +40,7 @@ Enter commands as prompted to retrieve specific support templates. Use `help` fo
 - Extendable template system for adding new support scenarios.
 
 ## Dependencies
+See `requirments.txt` for more extensive list.
 - Python 3.x
 - `requests` for HTTP requests.
 - `pyperclip` for clipboard operations.
@@ -54,19 +54,16 @@ Further documentation on extending templates and adding new command functionalit
 
 ## Examples
 - Retrieve a password reset template:
-  \`\`\`sh
-  >>>> pr
-  \`\`\`
+  \`\`\`sh >>>> pr\`\`\`
 - Get the description for the account activation process:
-  \`\`\`sh
-  >>>> aa -d
-  \`\`\`
+  \`\`\`sh >>>> aa -d\`\`\`
 
 ## Troubleshooting
 If you encounter any issues with command recognition or template retrieval, ensure you're entering the commands as specified in the `help` menu. For issues related to BeautifulSoup implementations in `Stew.py`, verify the HTML content or URLs are correctly formatted and accessible.
 
 ## Contributors
-List the contributors to the project here.
+`Creator:` Joel Prebish
+`:`
 
 ## License
-Specify the license under which this project is released, such as MIT, GPL, etc.
+N/A
