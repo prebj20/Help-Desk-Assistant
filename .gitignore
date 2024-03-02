@@ -1,1 +1,5 @@
 CODEOWNERS
+__pycache__
+*exe
+.vscode
+.pytest_cache

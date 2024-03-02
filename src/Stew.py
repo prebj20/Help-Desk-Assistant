@@ -4,15 +4,15 @@ implenentations in the Help Desk Assistant app.
 main() should be for development only, not for user side execution.
 '''
 
-# region IMPORTS ========================================
+# region IMPORTS ======================================== #
 from bs4 import BeautifulSoup as bs
 import requests
 
-# endregion ============================================= 
+# endregion ============================================= #
 
 
 
-# region EXAMPLES ========================================
+# region EXAMPLES ======================================= #
 
 # Example using Requests module
 # to obtain html content of a site
@@ -46,11 +46,11 @@ text_only = soup.get_text()
 # Uncomment to see output
 #print(text_only.strip())
 
-# endregion =============================================
+# endregion ============================================== #
 
 
 
-# region __name__ ========================================
+# region __name__ ======================================= #
 
 '''Code Here'''
 
@@ -58,7 +58,20 @@ text_only = soup.get_text()
 
 class KnowledgeBase:
 
-    def searchRC(entry) -> str:
+    # Static KB information #
+
+    # Help desk phone number
+    PHONE_NUMBER = ""
+    # Z's sacred 6 points
+    SIX_POINTS = ""
+    
+
+    # Functions #
+
+    # takes a string and searches the specified URL
+    # for a list of RC contact information. 
+    # returns a string 
+    def rc_contact(entry) -> str:
         '''Search url "https://services.pitt.edu/TDClient/33/Portal/KB/ArticleDet?ID=218" for the specified RC escalation contacts'''
 
 
@@ -71,12 +84,6 @@ if __name__ == "__main__":
     main()
 
 # endregion =============================================
-
-
-
-
-
-
 
 
 
