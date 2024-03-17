@@ -1,6 +1,6 @@
 import pytest
 
-import Mod
+import dead_code.Mod as Mod
 
 
 def test_formatted():

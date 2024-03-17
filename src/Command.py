@@ -1,7 +1,7 @@
 import pyperclip
-from Mod import AnsiColor
 import os
 
+from GUI import Application
 
 # Command Management
 class Command():
@@ -14,24 +14,33 @@ class Command():
             
 class Types:
     class Template:
-        def function(cmd: Command):
-            pyperclip.copy(cmd.data)
-            print(AnsiColor.OKGREEN+"Copied to Clipboard\n"+AnsiColor.ENDC)
+        def function(app: Application, cmd: Command):
+            if (cmd.data): 
+                app.display.replace(cmd.data)
+                app.q("Copy Description", cmd.data)
+            if (cmd.data_2): 
+                app.display.append("\n\n"+cmd.data_2)
+                app.q("Copy Resolution", cmd.data_2)
 
     class KnowledgeBase:
-         def function(cmd: Command):
-            print(f"Not Implemented. Entered -> {cmd.args}")
+         def function(app, cmd: Command):
+            app.display.append("Not Implemented. Try another command.")
 
     class Windows:
-        def function(cmd: Command):
+        def function(app, cmd: Command):
             cmd.args = list(cmd.args)
             cmd.args.pop(0)
             os.system(" ".join(cmd.args))
-        
 
 def find_command(list: Command, data) -> Command:
     for cmd in list:
         if cmd.name == data: return cmd
         elif cmd.data == data: return cmd
         elif cmd.data_2 == data: return cmd
-    return None  # This line is optional but makes the behavior explicit
+
+# turns string into set of args
+def arguments(entry) -> list:
+    # original
+    entry = str(entry).lower().strip(' !@#$%^&*()_+<>,.?/-')
+    entry = entry.split()
+    return entry
